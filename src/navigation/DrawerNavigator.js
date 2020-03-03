@@ -7,7 +7,7 @@ import {
 
 //import HomeNavigator from '../../navigation/HomeNavigator';
 import Users from '../drawer/users';
-//import Groups from '../drawer/groups';
+import TodoList from '../drawer/todolist';
 import FontsDrawerItem from '../drawer/groups';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
@@ -45,6 +45,10 @@ const DrawerNavigator = createDrawerNavigator(
     Lists: {
       path: '/groups',
       screen: FontsDrawerItem,
+    },
+    TodoList: {
+      path:'/todolist',
+      screen: TodoList,
     },
   },
   {

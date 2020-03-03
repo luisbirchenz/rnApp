@@ -1,39 +1,47 @@
 import React, { Component } from 'react';
-import { ScrollView, View, StyleSheet, Platform } from 'react-native';
+import { ScrollView, View, StyleSheet, Platform, ActivityIndicator } from 'react-native';
 import colors from '../config/colors';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { PricingCard, Text } from 'react-native-elements';
 
-class Pricing extends Component {
-  render() {
+const users = [
+  {
+    title: 'OnePlus 6T',
+    price: '600',
+    info: ['WiFiQ', 'Basic Support', 'All Features'],
+    label: { title: 'GET STARTED', icon: 'flight-takeoff' }
+  },    
+  {
+    title: 'IPhone 8',
+    price: '500',
+    info: ['NFC', 'Full Support', 'All Core Features'],
+    label: { title: 'APPLY', icon: 'flight-takeoff' }
+  },    
+
+];
+
+const Pricing = () => {
+
     return (
-      <ScrollView style={{ backgroundColor: 'white' }}>
-        <PricingCard
-          color={colors.primary}
-          title="Free"
-          price="$0"
-          info={['1 User', 'Basic Support', 'All Core Features']}
-          button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
-        />
-        <PricingCard
-          color={colors.secondary}
-          title="Starter"
-          price="$19"
-          info={['10 Users', 'Basic Support', 'All Core Features']}
-          button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
-        />
-        <PricingCard
-          color={colors.secondary2}
-          title="Enterprise"
-          price="$49"
-          info={['100 Users', 'One on One Support', 'All Core Features']}
-          button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
-        />
-      </ScrollView>
-    );
-  }
-}
+        <ScrollView style={{ backgroundColor: 'white' }}>
+                <View>
+                    {
+                        users.map((u) => {
+                            return (
+                                <PricingCard
+                                  color={colors.primary}
+                                  title={u.title}
+                                  price={u.price}
+                                  info={u.info}
+                                  button={u.label}
+                              />
+                            );
+                        })
+                    }
+                </View>
+        </ScrollView>
+      );
+};
 
 Pricing.navigationOptions = {
   title: 'Pricing',
