@@ -2,15 +2,15 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Icon } from 'react-native-elements';
 
-import Finding from '../views/finding-view';
+import GitHub from '../views/github-view';
 
 import config from '../config/stack';
 
-const TodoListDrawerItem = createStackNavigator({
+const GitHubDrawerItem = createStackNavigator({
   Pricing: {
-    screen: Finding,
+    screen: GitHub,
     navigationOptions: ({ navigation }) => ({
-      title: 'TodoList User',
+      title: 'Github',
       headerLeft: (
         <Icon
           name="menu"
@@ -24,8 +24,8 @@ const TodoListDrawerItem = createStackNavigator({
   },
 }, config);
 
-TodoListDrawerItem.navigationOptions = {
-  drawerLabel: 'Todo List',
+GitHubDrawerItem.navigationOptions = {
+  drawerLabel: 'GitHub',
   drawerIcon: ({ tintColor }) => (
     <Icon
       name="attach-money"
@@ -40,4 +40,4 @@ TodoListDrawerItem.navigationOptions = {
   ),
 };
 
-export default TodoListDrawerItem;
+export default GitHubDrawerItem;

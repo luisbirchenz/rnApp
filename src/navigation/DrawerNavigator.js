@@ -9,6 +9,7 @@ import {
 import Users from '../drawer/users';
 import TodoList from '../drawer/todolist';
 import FontsDrawerItem from '../drawer/groups';
+import GitHub from '../drawer/github';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
@@ -49,6 +50,10 @@ const DrawerNavigator = createDrawerNavigator(
     TodoList: {
       path:'/todolist',
       screen: TodoList,
+    },
+    GitHub: {
+      path: '/github',
+      screen: GitHub,
     },
   },
   {
